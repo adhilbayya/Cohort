@@ -12,7 +12,9 @@ let data = {
 function Video(name, age) {
   this.name = name;
   this.age = age;
-  console.log(this.age);
+  console.log(this);
 }
 
-data.getDetail();
+let video = new Video("Adhil", 20);
+
+// data.getDetail();
