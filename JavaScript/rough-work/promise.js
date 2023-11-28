@@ -12,4 +12,5 @@ function printResult() {
 }
 
 let pro = setPromise();
+console.log(setPromise());
 pro.then(printResult);
