@@ -15,4 +15,4 @@ function isAnagram(str1, str2) {
   return false;
 }
 
-console.log(isAnagram("listen", "siLent"));
+module.exports = isAnagram;
