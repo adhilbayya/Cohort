@@ -9,5 +9,9 @@ const exchangeRate = async (fromCurrency, toCurrency) => {
 }
 
 const getCountries = async (toCurrency) => {
-    const response = await axios.get()
+    const response = await axios.get(`https://restcountries.com/v3.1/currency/${toCurrency}`)
+    console.log(response.data.name)
 }
+
+getCountries("india")
+

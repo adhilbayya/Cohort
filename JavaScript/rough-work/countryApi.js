@@ -9,7 +9,7 @@ fetch(url)
   })
   .then(data => {
     data.forEach(country => {
-      const name = country.name.common;
+      const name = country.currencies;
       console.log('Country Name:', name);
       // You can access other country information here as needed
     });
