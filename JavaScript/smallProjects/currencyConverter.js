@@ -7,6 +7,10 @@ const exchangeRate = async (fromCurrency, toCurrency) => {
   const rate = response.data.rates;
   const inr = 1 / rate[fromCurrency];
   const exchangerate = inr * rate[toCurrency];
+
+  if (isNaN(exchangerate)) {
+    throw new Error(`${fromCurrency} and ${toCurrency} is not a currency`);
+  }
   return exchangerate;
 };
 
@@ -28,6 +32,10 @@ const calculateAmount = async (fromCurrency, toCurrency, amount) => {
   return `${amount} ${fromCurrency} is worth ${exchange} ${toCurrency} and can be used in all these contries : ${countries}`;
 };
 
-calculateAmount("USD", "INR", 1).then((message) => {
-  console.log(message);
-});
+calculateAmount("USD", "INR", 1)
+  .then((message) => {
+    console.log(message);
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
