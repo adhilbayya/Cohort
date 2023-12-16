@@ -8,16 +8,16 @@ function expenditureAnalysis(transactions) {
       categoryMap[t.category] = t.price;
     }
   }
-  let results = Object.keys(categoryMap).map((category) => {
-    let ans = [];
+  let keys = Object.keys(categoryMap);
+  let ans = [];
+  for (let i = 0; i < keys.length; i++) {
+    let category = keys[i];
     let obj = {
-      category: category,
-      Price: categoryMap[category],
+      [category]: categoryMap[category],
     };
     ans.push(obj);
-  });
-
-  return results;
+  }
+  return ans;
 }
 
 const transactions = [
