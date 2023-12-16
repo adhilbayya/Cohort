@@ -20,38 +20,4 @@ function expenditureAnalysis(transactions) {
   return ans;
 }
 
-const transactions = [
-  {
-    itemName: "Item 1",
-    category: "Food",
-    price: 20,
-    timestamp: "2023-11-30",
-  },
-  {
-    itemName: "Item 2",
-    category: "Clothing",
-    price: 50,
-    timestamp: "2023-11-29",
-  },
-  {
-    itemName: "Item 3",
-    category: "Food",
-    price: 30,
-    timestamp: "2023-11-28",
-  },
-  {
-    itemName: "Item 3",
-    category: "Games",
-    price: 30,
-    timestamp: "2023-11-28",
-  },
-  {
-    itemName: "Item 3",
-    category: "Games",
-    price: 30,
-    timestamp: "2023-11-28",
-  },
-];
-
-let total = expenditureAnalysis(transactions);
-console.log(total);
+module.exports = expenditureAnalysis;
