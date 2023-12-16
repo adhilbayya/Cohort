@@ -1,4 +1,4 @@
-function expenditureAnalysis(transactions) {
+function calculateTotalSpentByCategory(transactions) {
   let categoryMap = {};
   for (let i = 0; i < transactions.length; i++) {
     let t = transactions[i];
@@ -13,11 +13,12 @@ function expenditureAnalysis(transactions) {
   for (let i = 0; i < keys.length; i++) {
     let category = keys[i];
     let obj = {
-      [category]: categoryMap[category],
+      category: category,
+      totalSpent: categoryMap[category],
     };
     ans.push(obj);
   }
   return ans;
 }
 
-module.exports = expenditureAnalysis;
+module.exports = calculateTotalSpentByCategory;
